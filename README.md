@@ -33,9 +33,9 @@
 
 `TARGET_USERNAME` должен выглядеть так:
 
-Нужно написать `TARGET_USERNAME = "0flowey0`
+Нужно написать `TARGET_USERNAME = "0flowey0"`
 
-Вместо `TARGET_USERNAME = "@0flowey0`
+Вместо `TARGET_USERNAME = "@0flowey0"`
 
 ## Заметка
 
