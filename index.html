@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авто Огонек TikTok</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #353935;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards 0.3s;
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #006241;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards 0.6s;
+        }
+        .download-btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .download-btn:hover {
+            background-color: #00795a;
+            transform: scale(1.05);
+        }
+        .release-info {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards 0.8s;
+        }
+        .features {
+            text-align: left;
+            margin: 40px 0;
+        }
+        .section-spacer {
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .features h2 {
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .features p, .features ul {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .features li {
+            margin-bottom: 10px;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .visible {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Огонек TikTok 🔥</h1>
+        <p>Автоматизируйте поддержание огонька в TikTok с помощью Python скрипта.</p>
+        
+        <a href="https://github.com/flowey0stuff/tiktokstreak/releases" class="download-btn">
+            <img src="https://icons.veryicon.com/png/o/miscellaneous/wechat-purchasing-mobile-terminal/icon-down-arrow.png" alt="Download">
+            Скачать
+        </a>
+        <div class="release-info">Загрузка информации о последнем релизе...</div>
+        <div class="section-spacer"></div>
+        <div class="features">
+            <h2 class="animate-element">О проекте</h2>
+            <p class="animate-element">
+                "Огонек TikTok" - это Python скрипт, который автоматически пишет соообщение в TikTok.
+                Больше не нужно беспокоиться о том, что вы забудете отправить сообщение и потеряете свою 🔥Серию.
+            </p>
+            <div class="section-spacer"></div>
+            <h2 class="animate-element">Основные возможности:</h2>
+            <ul class="animate-element">
+                <li>Автоматическая отправка сообщений</li>
+                <li>Понятный и ясный функционал</li>
+                <li>Настройка отправляемого сообщения</li>
+                <li>Работает в фоновом режиме</li>
+                <li>Автовход в Аккаунт</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        &copy; 🔥Авто Огонек TikTok | <a href="https://github.com/flowey0stuff/tiktokstreak" style="color: white;">GitHub</a>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const documentHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercentage = scrollPosition / documentHeight;
+            const r = Math.round(0 + (53 * scrollPercentage));
+            const g = Math.round(0 + (57 * scrollPercentage));
+            const b = Math.round(0 + (53 * scrollPercentage));
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        });
+        fetch('https://api.github.com/repos/flowey0stuff/tiktokstreak/releases/latest')
+            .then(response => response.json())
+            .then(data => {
+                const releaseInfo = document.querySelector('.release-info');
+                releaseInfo.textContent = `Последняя версия: ${data.tag_name} - ${new Date(data.published_at).toLocaleDateString()}`;
+            })
+            .catch(error => {
+                const releaseInfo = document.querySelector('.release-info');
+                releaseInfo.textContent = 'Последняя версия доступна на GitHub';
+                console.error(error);
+            });
+        const animateElements = document.querySelectorAll('.animate-element');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
