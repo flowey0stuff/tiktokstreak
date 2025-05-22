@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авто Огонек TikTok</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #353935;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards 0.3s;
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #006241;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards 0.6s;
+        }
+        .download-btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .download-btn:hover {
+            background-color: #00795a;
+            transform: scale(1.05);
+        }
+        .release-info {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards 0.8s;
+        }
+        .features {
+            text-align: left;
+            margin: 40px 0;
+        }
+        .section-spacer {
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .small-spacer {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .features h2 {
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .features p, .features ul {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .features li {
+            margin-bottom: 10px;
+        }
+        
+        .installation, .setup, .how-it-works, .troubleshooting {
+            text-align: left;
+            margin: 40px 0;
+        }
+        
+        .code-block {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 15px 0;
+            text-align: left;
+            overflow-x: auto;
+        }
+        
+        .note {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-left: 4px solid #006241;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .visible {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 Огонек TikTok 🔥</h1>
+        <p>Автоматизируйте поддержание огонька в TikTok с помощью Python скрипта.</p>
+        <a href="https://github.com/flowey0stuff/tiktokstreak/releases" class="download-btn">
+            <img src="https://icons.veryicon.com/png/o/miscellaneous/wechat-purchasing-mobile-terminal/icon-down-arrow.png" alt="Download">
+            Скачать
+        </a>
+        <div class="release-info">Загрузка информации о последнем релизе...</div>
+        <div class="section-spacer"></div>
+        <div class="features">
+            <h2 class="animate-element">О проекте</h2>
+            <p class="animate-element">
+                "Огонек TikTok" - это Python скрипт, который автоматически пишет соообщение в TikTok.
+                Больше не нужно беспокоиться о том, что вы забудете отправить сообщение и потеряете свою 🔥Серию.
+            </p>
+            <div class="small-spacer"></div>
+            <h2 class="animate-element">Основные возможности:</h2>
+            <ul class="animate-element">
+                <li>Автоматическая отправка сообщений</li>
+                <li>Понятный и ясный функционал</li>
+                <li>Настройка отправляемого сообщения</li>
+                <li>Работает в фоновом режиме</li>
+                <li>Автовход в Аккаунт</li>
+            </ul>
+            <div class="small-spacer"></div>
+            <div class="installation">
+                <h2 class="animate-element">Установка</h2>
+                <p class="animate-element">Нужен Python 3.12+ (<a href="https://www.python.org/" style="color: #00795a;">скачать</a>).</p>
+                <ol class="animate-element">
+                    <li>
+                        <strong>Откройте терминал, и пропишите (важно!):</strong>
+                        <div class="code-block">pip install selenium webdriver-manager TikTokApi requests</div>
+                        <small>TikTokAPI конечно не работает, но его <strong>нужно установить</strong> для работы кода.</small>
+                    </li>
+                    <li>Установите файл (Releases -> tiktokstreak.py)</li>
+                    <li>Положите файл в папку</li>
+                </ol>
+            </div>
+            <div class="small-spacer"></div>
+            <div class="setup">
+                <h2 class="animate-element">Настройка</h2>
+                <ol class="animate-element">
+                    <li>Откройте его через любой редактор (блокнот, IDLE, VSCODE, PYCHARM и т.д.)</li>
+                    <li>Заполните пустые переменные:</li>
+                </ol>
+                <div class="code-block animate-element">
+                    TARGET_USERNAME = ""<br>
+                    MESSAGE = "Сообщение, которое отправляется автоматически."<br>
+                    ONRUNMESSAGE = "Сообщение, которое отправляется при запуске кода."<br>
+                    LOGINGUI = True или False
+                </div>
+                <p class="animate-element"><code>TARGET_USERNAME</code> должен выглядеть так:</p>
+                <p class="animate-element">Нужно написать <code>TARGET_USERNAME = "Флауи"</code></p>
+                <p class="animate-element">Вместо <code>TARGET_USERNAME = "@0flowey0"</code></p>
+                <p class="animate-element"><code>LOGINGUI</code> это настройка, нужно ли открывать браузер для входа. Если у вас есть SESSION_ID и MS_TOKEN на руке, то можете вставить эти данные в <code>SESSION_ID</code> и <code>MS_TOKEN</code>. Либо можете убрать комментарий на 94 и 101 строчке, запустить код, и при входе получить эти данные.</p>
+                <p class="animate-element">Ответ на то, нужен ли <code>LOGINGUI</code> - Это если вы помещаете на хостинг, где нет рабочего стола. Код должен работать отлично, если даже нет возможности открывать приложения с окнами, главное лишь выключить <code>LOGINGUI</code>.</p>
+                <h3 class="animate-element">После-настройки</h3>
+                <p class="animate-element">Запускайте файл. Желательно через терминал (python main.py), если хотите узнать в чём ошибка.</p>
+            </div>
+            <div class="how-it-works">
+                <h2 class="animate-element">Как это работает?</h2>
+                <ol class="animate-element">
+                    <li>Открывается в браузере окно входа (если LOGINGUI = True)</li>
+                    <li>Происходит вход в аккаунт</li>
+                    <li>Код берёт из http реквестов SESSION_ID и MS_TOKEN</li>
+                    <li>Код закрывает браузер</li>
+                    <li>Сохраняет токены</li>
+                    <li>Открывает невидимый браузер (headless)</li>
+                    <li>Вставляет токены</li>
+                    <li>Открывает переписку</li>
+                    <li>Ищет человека по нику</li>
+                    <li>Открывает чат с ним</li>
+                    <li>Жмёт по вводу текста</li>
+                    <li>Набирает текст (вручную, не вставляя). И жмёт ENTER</li>
+                    <li>Проверяет, отправилось ли сообщение</li>
+                    <li>Закрывает браузер и начинает ждать 12:00 МСК</li>
+                    <li>Возвращается к 6 этапу</li>
+                </ol>
+            </div>
+            <div class="troubleshooting">
+                <h2 class="animate-element">Код не работает!!! Помогите!!!</h2>
+                <ol class="animate-element">
+                    <li>Установите пайтон</li>
+                    <li>Установите библеотеки через pip install (если у вас проблема с pip install, посмотрите <a href="https://imgur.com/a/xHZJcoy" style="color: #00795a;">скриншот</a>)</li>
+                    <li>Вставили ли вы все нужные данные (раздел настройка)</li>
+                    <li>Пересмотрите LOGINGUI. Если это среда без DE, поставьте LOGINGUI = False. (True или False ставят без кавычек!)</li>
+                    <li>Посмотрите данные, которые ввели, в самом начале файла. Вдруг ошибку сделали</li>
+                    <li>Перечитайте внимательно всю инструкцию</li>
+                    <li>Если совсем всё ужасно - напишите в Issues</li>
+                </ol>
+            </div>
+            <div class="section-spacer"></div>
+            <div class="note animate-element">
+                <p><strong>Заметка:</strong> Перепроверьте код, если вы не доверяете свой аккаунт тиктока! Лишь знав базовый английский, можно понять что каждая строка делает. Также расставлены комментарии!</p>
+                <p>А ещё, есть малый шанс что за это можно получить бан. Конечно, код старается имитировать браузер, но всё же. Лично я проверял на своём основном аккаунте @0flowey0 (<a href="https://imgur.com/a/ZoLqsHr" style="color: #00795a;">скриншот</a>)</p>
+                <p>Можно спокойно сделать форк на гитхабе, если есть идеи как облегчить код. (TikTokAPI не работает.)</p>
+                <p>На Termux можно попытаться сделать (LOGINGUI=False). Но session_id и ms_token придётся найти самому. Загуглите, или спросите у ии, как достать на телефоне из куки и http реквеста данные из тикток-сайта.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; flowey0 | <a href="https://github.com/flowey0stuff/tiktokstreak" style="color: white;">GitHub</a>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const documentHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercentage = scrollPosition / documentHeight;
+            const r = Math.round(0 + (53 * scrollPercentage));
+            const g = Math.round(0 + (57 * scrollPercentage));
+            const b = Math.round(0 + (53 * scrollPercentage));
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        });
+        fetch('https://api.github.com/repos/flowey0stuff/tiktokstreak/releases/latest')
+            .then(response => response.json())
+            .then(data => {
+                const releaseInfo = document.querySelector('.release-info');
+                releaseInfo.textContent = `Последняя версия: ${data.tag_name} - ${new Date(data.published_at).toLocaleDateString()}`;
+            })
+            .catch(error => {
+                const releaseInfo = document.querySelector('.release-info');
+                releaseInfo.textContent = 'Последняя версия доступна на GitHub';
+                console.error(error);
+            });
+        const animateElements = document.querySelectorAll('.animate-element');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
